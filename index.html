@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizMaster - Interactive Learning Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="screen active">
+            <div class="welcome-content">
+                <h1 class="main-title">QuizMaster</h1>
+                <p class="subtitle">Test your knowledge and challenge yourself!</p>
+
+                <div class="setup-section">
+                    <div class="setup-item">
+                        <label for="category-select">Choose Category:</label>
+                        <select id="category-select">
+                            <option value="general">General Knowledge</option>
+                            <option value="science">Science & Technology</option>
+                            <option value="history">History</option>
+                            <option value="geography">Geography</option>
+                            <option value="math">Mathematics</option>
+                        </select>
+                    </div>
+
+                    <div class="setup-item">
+                        <label for="difficulty-select">Difficulty Level:</label>
+                        <select id="difficulty-select">
+                            <option value="easy">Easy</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+
+                    <div class="setup-item">
+                        <label for="num-questions">Number of Questions:</label>
+                        <input type="number" id="num-questions" min="5" max="50" value="10">
+                    </div>
+                </div>
+
+                <button id="start-btn" class="btn btn-primary">Start Quiz</button>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <span class="progress-text" id="progress-text">Question 1 of 10</span>
+                </div>
+                <div class="timer" id="timer">Time: 00:00</div>
+            </div>
+
+            <div class="quiz-content">
+                <h2 id="question-text" class="question">Loading question...</h2>
+                <div id="answer-options" class="answer-options">
+                    <!-- Options will be dynamically inserted here -->
+                </div>
+            </div>
+
+            <div class="quiz-footer">
+                <button id="next-btn" class="btn btn-secondary" disabled>Next Question</button>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <div class="results-content">
+                <h2 class="results-title">Quiz Complete!</h2>
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span id="percentage-score">0%</span>
+                    </div>
+                    <p id="performance-rating">Needs Improvement</p>
+                    <p class="final-score">Score: <span id="score-value">0</span>/<span id="total-questions">0</span></p>
+                </div>
+
+                <div class="results-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Correct Answers:</span>
+                        <span id="correct-count">0</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Incorrect Answers:</span>
+                        <span id="incorrect-count">0</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Time Taken:</span>
+                        <span id="time-taken">0s</span>
+                    </div>
+                </div>
+
+                <div class="review-section">
+                    <h3>Review Your Answers</h3>
+                    <div id="review-questions" class="review-questions">
+                        <!-- Review questions will be inserted here -->
+                    </div>
+                </div>
+
+                <div class="results-actions">
+                    <button id="retake-btn" class="btn btn-primary">Retake Quiz</button>
+                    <button id="home-btn" class="btn btn-secondary">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
